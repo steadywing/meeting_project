@@ -33,6 +33,7 @@ if "schedule_data" not in st.session_state:
 pages = [
     st.Page("pages/manage_meeting.py", title="회의록 관리", icon=":material/group:", default=True),
     st.Page("pages/mypage.py", icon=":material/calendar_month:", title="마이페이지"),
+    st.Page("pages/streamlit_basic.py", icon=":material/search:", title="Streamlit 예제"),
 ]
 
 pg = st.navigation(pages)
