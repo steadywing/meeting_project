@@ -4,12 +4,14 @@ from langchain_core.output_parsers import StrOutputParser, CommaSeparatedListOut
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv 
+from pathlib import Path 
 
 load_dotenv()
 
 # 프롬프트 가져오는 함수
 def make_prompt(prompt_name):
-    with open(f"./prompts/{prompt_name}.txt", "r") as f:
+    path = Path(__file__).parents[1]
+    with open(path / f"prompts/{prompt_name}.txt", "r") as f:
         template = f.read()
     
     prompt = PromptTemplate.from_template(template)
